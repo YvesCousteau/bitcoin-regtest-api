@@ -1,0 +1,19 @@
+@api = http://localhost:8081
+@sender = bcrt1qr5g0r2hhtggl5pav6507ulg4wuxufad6wdxl5h
+@transaction = 50bba3b69f082de51af4b5bc94344596044a68d03ae668116bfe0183b265ddbf
+
+### get network infos
+GET {{api}}/regtest/api/network
+Content-Type: application/json
+
+### get previous transaction
+GET {{api}}/regtest/api/address/{{sender}}/utxo
+Content-Type: application/json
+
+### publish transaction
+POST {{api}}/regtest/api/tx
+Content-Type: application/json
+
+{
+  "transaction": "{{transaction}}"
+}
