@@ -21,7 +21,7 @@ struct AppState {
 async fn main() -> Result<()> {
     let _guard = logger::initialize(&logger::Scope::Local, &CONFIG.app.log_level)?;
 
-    let rpc_url = "http://localhost:18443";
+    let rpc_url = "http://localhost:18443/wallet/watchonly";
     let rpc_auth = Auth::UserPass("user".into(), "password".into());
     let client = Arc::new(Mutex::new(Client::new(rpc_url, rpc_auth)?));
 

@@ -74,7 +74,7 @@ async fn get_previous_transaction_by_address(
         .map_err(|e| anyhow!("sexe {}", e))?;
 
     let utxos = rpc
-        .list_unspent(Some(0), Some(9999999), Some(&[&address]), None, None)
+        .list_unspent(Some(1), Some(9999999), Some(&[&address]), None, None)
         .map_err(|e| anyhow!("sexe {}", e))?;
 
     let utxos: Vec<UtxoResponse> = utxos
